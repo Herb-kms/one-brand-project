@@ -1,98 +1,230 @@
 'use client';
 
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from 'framer-motion';
-
-import {
-  ShoppingBag,
-  ArrowRight,
-} from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { ShoppingBag, ArrowRight, Clock, Zap, Moon, CheckCircle2 } from 'lucide-react';
 
 export default function OneBrandLandingPage() {
   const { scrollYProgress } = useScroll();
-
   const heroScale = useTransform(scrollYProgress, [0, 0.3], [1, 1.08]);
-  const heroOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.25],
-    [1, 0.65]
-  );
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.25], [1, 0.65]);
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  };
 
   return (
-    <motion.div
-      key="home"
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      <section className="relative min-h-screen px-6 md:px-20 py-32 flex items-center overflow-hidden">
-        <div className="max-w-7xl mx-auto w-full">
-          <div className="mb-16">
-            <p className="uppercase tracking-[0.3em] text-sm text-gray-400 mb-6">
-              Future Nutrition Brand
+    <div className="bg-[#fcfbf9] text-[#1c1c1c] min-h-screen font-sans selection:bg-[#d8cfc4] selection:text-black">
+      
+      {/* 1. Hero Section */}
+      <section className="relative min-h-screen px-6 md:px-20 pt-32 pb-20 flex flex-col justify-center overflow-hidden">
+        <div className="max-w-7xl mx-auto w-full z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-16"
+          >
+            <p className="uppercase tracking-[0.3em] text-sm text-gray-500 mb-6 font-medium">
+              Future Nutrition System
             </p>
-
-            <h2 className="text-5xl md:text-8xl font-semibold leading-[0.95] tracking-tight max-w-5xl">
-              식사와 영양을
-              <br />
+            <h1 className="text-5xl md:text-8xl font-semibold leading-[1.05] tracking-tight max-w-5xl">
+              식사와 영양을<br />
               하나의 루틴으로.
-            </h2>
-
-            <p className="mt-8 text-lg text-gray-500 max-w-2xl leading-relaxed">
-              One은 단순한 영양제가 아닌,
-              식사 공백을 해결하기 위한 캡슐 기반 뉴트리션 푸드 시스템입니다.
+            </h1>
+            <p className="mt-8 text-xl text-gray-600 max-w-2xl leading-relaxed font-light">
+              건강하고 싶지만, 복잡한 건 싫으니까.<br/>
+              하루 3번, 3개의 캡슐로 완성되는 가장 명쾌한 솔루션.
             </p>
-          </div>
+          </motion.div>
 
           <motion.div
-            style={{
-              scale: heroScale,
-              opacity: heroOpacity,
-            }}
-            whileHover={{
-              y: -6,
-              scale: 1.01,
-            }}
-            transition={{ duration: 0.6 }}
-            className="relative rounded-[3rem] overflow-hidden bg-[#e6e1d9] border border-black/5 shadow-2xl"
+            style={{ scale: heroScale, opacity: heroOpacity }}
+            className="relative rounded-[2rem] md:rounded-[3rem] overflow-hidden bg-[#e6e1d9] shadow-2xl shadow-black/10"
           >
             <img
-              src="/one-product-main.png"
-              alt="ONE Product"
-              className="w-full object-cover"
+              src="/one-brand-img.jpg"
+              alt="ONE Product Design"
+              className="w-full object-cover max-h-[80vh]"
             />
-
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-
-            <div className="absolute bottom-10 left-10 text-white">
-              <p className="text-sm uppercase tracking-[0.3em] opacity-70 mb-4">
-                One System
-              </p>
-
-              <h3 className="text-4xl md:text-6xl font-semibold leading-tight">
-                3 Moments.
-                <br />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12 text-white">
+              <h3 className="text-3xl md:text-5xl font-medium tracking-tight">
+                3 Moments.<br />
                 1 Completion.
               </h3>
-            </div>
-
-            <div className="absolute top-8 right-8 flex gap-3">
-              <button className="bg-white text-black px-6 py-3 rounded-full flex items-center gap-2 hover:scale-105 transition duration-300 shadow-lg">
-                Buy Now
-                <ArrowRight size={16} />
-              </button>
-
-              <button className="w-12 h-12 rounded-full bg-black/40 backdrop-blur-xl text-white flex items-center justify-center">
-                <ShoppingBag size={18} />
-              </button>
             </div>
           </motion.div>
         </div>
       </section>
-    </motion.div>
+
+      {/* 2. The Problem */}
+      <section className="py-32 bg-white px-6 md:px-20">
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeInUp}
+            className="mb-16 md:mb-24"
+          >
+            <h2 className="text-4xl md:text-6xl font-medium tracking-tight mb-6">왜 건강을 챙기는 일은<br/>여전히 복잡할까?</h2>
+            <div className="h-1 w-20 bg-black"></div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            {[
+              {
+                title: "불규칙한 식습관",
+                desc: "바쁜 직장인과 시험 기간의 학생들에게 '제대로 된 식사'는 사치입니다."
+              },
+              {
+                title: "영양의 불균형",
+                desc: "간편식은 늘어가지만, 우리가 필요한 필수 영양은 늘 부족합니다."
+              },
+              {
+                title: "번거로운 루틴",
+                desc: "여러 알의 영양제를 나누어 챙기는 과정은 바쁜 일상 속에서 지속하기 어렵습니다."
+              }
+            ].map((item, idx) => (
+              <motion.div 
+                key={idx}
+                initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }}
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: idx * 0.2 } }
+                }}
+                className="bg-[#fcfbf9] p-10 rounded-3xl border border-gray-100"
+              >
+                <h3 className="text-2xl font-medium mb-4">{item.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Insight */}
+      <section className="py-32 px-6 md:px-20 bg-[#1c1c1c] text-white">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+          <motion.div 
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp}
+            className="flex-1"
+          >
+            <p className="uppercase tracking-[0.2em] text-[#d8cfc4] text-sm mb-4">Insight</p>
+            <h2 className="text-4xl md:text-6xl font-medium tracking-tight leading-tight mb-10">
+              건강하고 싶지만,<br/>복잡한 건 싫으니까.
+            </h2>
+            <div className="space-y-6">
+              {[
+                "현대인은 건강과 간편함 사이에서 늘 갈등합니다.",
+                "때로는 완벽한 식사보다, 나를 유지해 줄 정교한 루틴이 필요합니다.",
+                "아침, 점심, 저녁으로 이어지는 단순한 반복이 지속 가능한 건강을 만듭니다."
+              ].map((text, idx) => (
+                <div key={idx} className="flex items-start gap-4">
+                  <CheckCircle2 className="w-6 h-6 text-[#d8cfc4] shrink-0 mt-1" />
+                  <p className="text-xl text-gray-300 font-light leading-relaxed">{text}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1 }}
+            className="flex-1 w-full"
+          >
+            <div className="aspect-square rounded-full border border-gray-800 flex items-center justify-center p-12 relative overflow-hidden">
+              <div className="absolute inset-0 border-[1px] border-[#d8cfc4]/30 rounded-full animate-[spin_60s_linear_infinite]" />
+              <div className="absolute inset-4 border-[1px] border-[#d8cfc4]/20 rounded-full animate-[spin_40s_linear_infinite_reverse]" />
+              <img src="/one-product-main.png" alt="ONE Capsule" className="w-full h-full object-contain rounded-full relative z-10 opacity-80" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 4. Product Concept & System Spec */}
+      <section className="py-32 px-6 md:px-20 bg-[#f4f2ee]">
+        <div className="max-w-7xl mx-auto">
+          
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-24">
+            <h2 className="text-4xl md:text-6xl font-medium tracking-tight mb-6">ONE: 하루를 하나로 완성하는 시스템</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Structure: 하루 3번의 섭취, 3개의 캡슐로 완성되는 구조<br/>
+              Function: 하루에 필요한 영양과 2,400 kcal를 완벽하게 포함<br/>
+              Message: 복잡한 하루를 하나로 정리하는 가장 명쾌한 솔루션
+            </p>
+          </motion.div>
+
+          <div className="bg-white rounded-[3rem] p-8 md:p-16 shadow-sm border border-gray-100">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-gray-200 pb-12">
+              <div>
+                <h3 className="text-3xl md:text-5xl font-medium mb-4">단 3번으로 설계되는<br/>완벽한 하루</h3>
+                <p className="text-gray-500 tracking-widest uppercase">System Spec & UX</p>
+              </div>
+              <div className="mt-8 md:mt-0 text-right">
+                <p className="text-4xl font-semibold mb-2">2,400 <span className="text-xl text-gray-500 font-normal">kcal</span></p>
+                <p className="text-gray-500 text-sm">탄수화물 240g / 단백질 180g / 지방 80g / 미네랄 5g</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Morning */}
+              <div className="group hover:bg-[#faf9f7] p-8 rounded-3xl transition-colors duration-300">
+                <div className="w-14 h-14 rounded-full bg-[#fdecd5] text-[#e09138] flex items-center justify-center mb-8">
+                  <Zap size={24} />
+                </div>
+                <div className="mb-4">
+                  <span className="text-sm font-semibold tracking-widest text-[#e09138]">07:00 AM</span>
+                  <h4 className="text-2xl font-medium mt-2">Morning 에너지</h4>
+                </div>
+                <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
+                  <p><strong>영양:</strong> 탄수화물 110g, 단백질 40g, 지방 11g + 비타민 B군, C</p>
+                  <p><strong>효과:</strong> 잠든 몸을 깨우고 선명한 정신으로 아침을 시작합니다.</p>
+                </div>
+              </div>
+
+              {/* Noon */}
+              <div className="group hover:bg-[#faf9f7] p-8 rounded-3xl transition-colors duration-300">
+                <div className="w-14 h-14 rounded-full bg-[#e3ecda] text-[#6b8b4b] flex items-center justify-center mb-8">
+                  <Clock size={24} />
+                </div>
+                <div className="mb-4">
+                  <span className="text-sm font-semibold tracking-widest text-[#6b8b4b]">01:00 PM</span>
+                  <h4 className="text-2xl font-medium mt-2">Noon 균형</h4>
+                </div>
+                <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
+                  <p><strong>영양:</strong> 탄수화물 90g, 단백질 90g, 지방 31g + 전해질, 칼슘, 철분</p>
+                  <p><strong>효과:</strong> 가장 활동적인 오후 시간, 지치지 않는 에너지를 유지합니다.</p>
+                </div>
+              </div>
+
+              {/* Night */}
+              <div className="group hover:bg-[#faf9f7] p-8 rounded-3xl transition-colors duration-300">
+                <div className="w-14 h-14 rounded-full bg-[#e1e9f0] text-[#55779c] flex items-center justify-center mb-8">
+                  <Moon size={24} />
+                </div>
+                <div className="mb-4">
+                  <span className="text-sm font-semibold tracking-widest text-[#55779c]">08:00 PM</span>
+                  <h4 className="text-2xl font-medium mt-2">Night 회복</h4>
+                </div>
+                <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
+                  <p><strong>영양:</strong> 탄수화물 40g, 단백질 50g, 지방 38g + 마그네슘, 아연, 비타민 D</p>
+                  <p><strong>효과:</strong> 소화 부담 없이 신체를 안정시키고 깊은 휴식을 돕습니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-32 px-6 flex justify-center items-center">
+        <motion.button 
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="bg-black text-white px-10 py-5 rounded-full text-lg font-medium flex items-center gap-3 shadow-2xl hover:shadow-black/20 transition-all"
+        >
+          당신의 하루 설계하기
+          <ArrowRight size={20} />
+        </motion.button>
+      </section>
+
+    </div>
   );
 }
