@@ -138,18 +138,39 @@ export default function OneBrandLandingPage() {
         </div>
       </section>
 
-      {/* 4. Product Concept & System Spec */}
+      {/* 4. Philosophy & System Spec */}
       <section className="py-32 px-6 md:px-20 bg-[#f4f2ee]">
         <div className="max-w-7xl mx-auto">
           
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="text-center mb-24">
-            <h2 className="text-4xl md:text-6xl font-medium tracking-tight mb-6">ONE: 하루를 하나로 완성하는 시스템</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Structure: 하루 3번의 섭취, 3개의 캡슐로 완성되는 구조<br/>
-              Function: 하루에 필요한 영양과 2,400 kcal를 완벽하게 포함<br/>
-              Message: 복잡한 하루를 하나로 정리하는 가장 명쾌한 솔루션
-            </p>
-          </motion.div>
+          <div className="flex flex-col lg:flex-row gap-16 items-center mb-24">
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="flex-1">
+              <p className="uppercase tracking-[0.2em] text-gray-500 text-sm mb-4">Philosophy</p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-8 leading-tight">
+                ONE: 하루를 하나로<br/>완성하는 시스템
+              </h2>
+              <div className="space-y-4 text-lg text-gray-600">
+                <p><strong className="text-black font-medium">Structure:</strong> 하루 3번의 섭취, 3개의 캡슐로 완성되는 구조</p>
+                <p><strong className="text-black font-medium">Function:</strong> 하루에 필요한 영양과 2,400 kcal를 완벽하게 포함</p>
+                <p><strong className="text-black font-medium">Message:</strong> 복잡한 하루를 하나로 정리하는 가장 명쾌한 솔루션</p>
+              </div>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true }} 
+              transition={{ duration: 0.8 }} 
+              className="flex-1 w-full"
+            >
+              <div className="rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-xl shadow-black/5 bg-white">
+                <img 
+                  src="/one-brand-img2.png" 
+                  alt="ONE Brand Philosophy" 
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </motion.div>
+          </div>
 
           <div className="bg-white rounded-[3rem] p-8 md:p-16 shadow-sm border border-gray-100">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-gray-200 pb-12">
