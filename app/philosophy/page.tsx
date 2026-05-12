@@ -38,10 +38,11 @@ export default function PhilosophyPage() {
                 </div>
 
                 <div className="w-full aspect-[21/9] bg-[#e6e1d9] rounded-[3rem] overflow-hidden relative shadow-md">
-                    <div className="absolute inset-0 bg-black/5 mix-blend-multiply" />
-                    <div className="absolute inset-0 flex items-center justify-center text-black/30 text-sm tracking-[0.2em] font-medium uppercase">
-                        Image Area
-                    </div>
+                    <img 
+                        src="/one-brand-img2.png" 
+                        alt="Brand Philosophy" 
+                        className="w-full h-full object-cover"
+                    />
                 </div>
             </div>
         </motion.div>
