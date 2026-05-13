@@ -24,8 +24,8 @@ export default function OneBrandLandingPage() {
           className="absolute inset-0 z-0"
         >
           <img
-            src="/one-brand-img.jpg"
-            alt="ONE Future Nutrition"
+            src="/one-product-main.png"
+            alt="ONE Future Nutrition Product"
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
