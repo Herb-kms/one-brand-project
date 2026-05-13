@@ -38,11 +38,25 @@ export function Header() {
         />
       </Link>
 
-      <nav className="hidden md:flex items-center gap-10 text-sm font-medium tracking-[0.1em] uppercase">
-        <Link href="/philosophy" className={`hover:opacity-70 transition-opacity ${pathname === '/philosophy' ? 'underline underline-offset-4' : ''}`}>Philosophy</Link>
-        <Link href="/system" className={`hover:opacity-70 transition-opacity ${pathname === '/system' ? 'underline underline-offset-4' : ''}`}>System</Link>
-        <Link href="/magazine" className={`hover:opacity-70 transition-opacity ${pathname === '/magazine' ? 'underline underline-offset-4' : ''}`}>Magazine</Link>
-        <Link href="/shop" className={`hover:opacity-70 transition-opacity ${pathname === '/shop' ? 'underline underline-offset-4' : ''}`}>Shop</Link>
+      <nav className="hidden md:flex items-center gap-5 lg:gap-8 text-xs lg:text-sm font-medium tracking-[0.1em] uppercase">
+        {[
+          ['/', 'Home'],
+          ['/philosophy', 'Philosophy'],
+          ['/about', 'About'],
+          ['/system', 'System'],
+          ['/routine', 'Routine'],
+          ['/film', 'Film'],
+          ['/experience', 'Experience'],
+          ['/contact', 'Contact'],
+        ].map(([href, title]) => (
+          <Link 
+            key={href} 
+            href={href} 
+            className={`hover:opacity-70 transition-opacity whitespace-nowrap ${pathname === href ? 'underline underline-offset-4' : ''}`}
+          >
+            {title}
+          </Link>
+        ))}
       </nav>
       
       {/* Mobile Menu Button Placeholder */}
