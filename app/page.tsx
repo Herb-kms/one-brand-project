@@ -17,45 +17,55 @@ export default function OneBrandLandingPage() {
     <div className="bg-[#fcfbf9] text-[#1c1c1c] min-h-screen font-sans selection:bg-[#d8cfc4] selection:text-black">
 
       {/* 1. Hero Section */}
-      <section className="relative min-h-screen px-6 md:px-20 pt-32 pb-20 flex flex-col justify-center overflow-hidden">
-        <div className="max-w-7xl mx-auto w-full z-10">
+      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+        {/* Full-bleed Background Image */}
+        <motion.div
+          style={{ scale: heroScale, opacity: heroOpacity }}
+          className="absolute inset-0 z-0"
+        >
+          <img
+            src="/one-brand-img.jpg"
+            alt="ONE Future Nutrition"
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-black/20" /> {/* Extra subtle darkening */}
+        </motion.div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-20 text-white mt-16 md:mt-0">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-16"
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="max-w-3xl"
           >
-            <p className="uppercase tracking-[0.3em] text-sm text-gray-500 mb-6 font-medium">
+            <p className="uppercase tracking-[0.3em] text-sm text-[#d8cfc4] mb-6 font-medium">
               Future Nutrition System
             </p>
-            <h1 className="text-5xl md:text-8xl font-semibold leading-[1.05] tracking-tight max-w-5xl">
-              식사와 영양을<br />
-              하나의 루틴으로.
+            <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-semibold leading-[1.1] tracking-tight mb-8 drop-shadow-lg">
+              가장 명쾌한<br />솔루션.
             </h1>
-            <p className="mt-8 text-xl text-gray-600 max-w-2xl leading-relaxed font-light">
-              건강하고 싶지만, 복잡한 건 싫으니까.<br />
-              하루 3번, 3개의 캡슐로 완성되는 가장 명쾌한 솔루션.
+            <p className="text-xl md:text-3xl font-medium text-gray-200 mb-6 drop-shadow-md">
+              복잡한 건강관리를 끝내기 위한<br className="md:hidden" /> 단 하나의 솔루션.
+            </p>
+            <p className="text-lg md:text-xl text-gray-300 font-light leading-relaxed drop-shadow-md">
+              ONE은 일상 속 복잡함을 줄이고,<br className="hidden md:block" />
+              당신의 본질적인 삶에 집중할 수 있도록 고안된<br className="hidden md:block" />
+              퓨처 뉴트리션 시스템입니다.
             </p>
           </motion.div>
-
-          <motion.div
-            style={{ scale: heroScale, opacity: heroOpacity }}
-            className="relative rounded-[2rem] md:rounded-[3rem] overflow-hidden bg-[#e6e1d9] shadow-2xl shadow-black/10"
-          >
-            <img
-              src="/one-brand-img.jpg"
-              alt="ONE Product Design"
-              className="w-full object-cover max-h-[80vh]"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-            <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12 text-white">
-              <h3 className="text-3xl md:text-5xl font-medium tracking-tight">
-                3 Moments.<br />
-                1 Completion.
-              </h3>
-            </div>
-          </motion.div>
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          className="absolute bottom-10 left-6 md:left-20 flex flex-col items-start gap-3 z-10 text-white/70"
+        >
+          <div className="w-[1px] h-16 bg-gradient-to-b from-white/70 to-transparent ml-2"></div>
+          <span className="text-xs tracking-[0.2em] uppercase font-light">Scroll Down</span>
+        </motion.div>
       </section>
 
       {/* 2. Insight */}
