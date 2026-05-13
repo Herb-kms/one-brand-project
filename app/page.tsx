@@ -17,7 +17,7 @@ export default function OneBrandLandingPage() {
     <div className="bg-[#fcfbf9] text-[#1c1c1c] min-h-screen font-sans selection:bg-[#d8cfc4] selection:text-black">
 
       {/* 1. Hero Section */}
-      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+      <section className="relative h-screen flex flex-col justify-center overflow-hidden">
         {/* Full-bleed Background Image */}
         <motion.div
           style={{ scale: heroScale, opacity: heroOpacity }}
@@ -32,13 +32,13 @@ export default function OneBrandLandingPage() {
           <div className="absolute inset-0 bg-black/20" /> {/* Extra subtle darkening */}
         </motion.div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-20 text-white mt-16 md:mt-0">
+        {/* Hero Content - Middle Left Aligned */}
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-20 text-white flex items-center h-full">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="max-w-3xl"
+            className="max-w-3xl text-left"
           >
             <p className="uppercase tracking-[0.3em] text-sm text-[#d8cfc4] mb-6 font-medium">
               Future Nutrition System
@@ -58,6 +58,7 @@ export default function OneBrandLandingPage() {
         </div>
 
         <motion.div 
+
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
