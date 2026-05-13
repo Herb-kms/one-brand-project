@@ -24,12 +24,12 @@ export default function OneBrandLandingPage() {
           className="absolute inset-0 z-0"
         >
           <img
-            src="/hero-product.png"
+            src="/bg-final.png"
             alt="ONE Future Nutrition Product"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-          <div className="absolute inset-0 bg-black/20" /> {/* Extra subtle darkening */}
+          {/* Subtle overlay just enough for white text legibility, without hiding the product */}
+          <div className="absolute inset-0 bg-black/20" />
         </motion.div>
 
         {/* Hero Content - Middle Left Aligned */}
