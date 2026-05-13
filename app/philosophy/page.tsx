@@ -10,7 +10,7 @@ export default function PhilosophyPage() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6 }}
-            className="min-h-screen pt-32 px-6 md:px-20 w-full overflow-y-auto pb-32"
+            className="min-h-screen pt-32 px-6 md:px-20 w-full pb-32"
         >
             <div className="max-w-7xl mx-auto w-full">
                 <p className="uppercase tracking-[0.3em] text-sm text-gray-400 mb-6">
@@ -39,7 +39,7 @@ export default function PhilosophyPage() {
 
                 <div className="w-full aspect-[21/9] bg-[#e6e1d9] rounded-[3rem] overflow-hidden relative shadow-md">
                     <img
-                        src="/one-brand-img2.png"
+                        src="/bg-final.png"
                         alt="Brand Philosophy"
                         className="w-full h-full object-cover"
                     />
