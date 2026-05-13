@@ -24,7 +24,7 @@ export default function OneBrandLandingPage() {
           className="absolute inset-0 z-0"
         >
           <img
-            src="/one-product-main.png"
+            src="/hero-product.png"
             alt="ONE Future Nutrition Product"
             className="w-full h-full object-cover object-center"
           />
