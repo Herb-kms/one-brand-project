@@ -57,7 +57,7 @@ export default function OneBrandLandingPage() {
           </motion.div>
         </div>
 
-        <motion.div 
+        <motion.div
 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -78,7 +78,7 @@ export default function OneBrandLandingPage() {
           >
             <p className="uppercase tracking-[0.2em] text-[#d8cfc4] text-sm mb-4">Insight</p>
             <h2 className="text-4xl md:text-6xl font-medium tracking-tight leading-tight mb-10">
-              건강하게 끼니를 챙기고 싶지만,<br />간편한 게 좋으니까.
+              번거로운 식사 대신,<br />더 균형 잡힌 하루
             </h2>
             <div className="space-y-6">
               {[
