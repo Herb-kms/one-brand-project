@@ -27,7 +27,15 @@ export function Header() {
       } ${isDarkText ? 'text-black' : 'text-white'}`}
     >
       <Link href="/" className="flex items-center">
-        <img src="/brand-logo.png" alt="ONE Brand Logo" className="h-8 md:h-10 w-auto object-contain transition-transform hover:scale-105" />
+        <img 
+          src="/brand-logo.png" 
+          alt="ONE Brand Logo" 
+          className={`h-8 md:h-10 w-auto object-contain transition-transform hover:scale-105 ${
+            isDarkText 
+              ? 'mix-blend-multiply' // Makes white bg transparent, keeps dark text
+              : 'invert mix-blend-screen' // Makes white bg transparent, turns dark text to white
+          }`} 
+        />
       </Link>
 
       <nav className="hidden md:flex items-center gap-10 text-sm font-medium tracking-[0.1em] uppercase">
