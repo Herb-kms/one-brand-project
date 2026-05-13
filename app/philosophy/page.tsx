@@ -38,9 +38,9 @@ export default function PhilosophyPage() {
                 </div>
 
                 <div className="w-full aspect-[21/9] bg-[#e6e1d9] rounded-[3rem] overflow-hidden relative shadow-md">
-                    <img 
-                        src="/one-brand-img2.png" 
-                        alt="Brand Philosophy" 
+                    <img
+                        src="/one-brand-img2.png"
+                        alt="Brand Philosophy"
                         className="w-full h-full object-cover"
                     />
                 </div>
