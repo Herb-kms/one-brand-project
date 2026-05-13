@@ -100,7 +100,7 @@ export default function OneBrandLandingPage() {
             <div className="aspect-square rounded-full border border-gray-800 flex items-center justify-center p-12 relative overflow-hidden">
               <div className="absolute inset-0 border-[1px] border-[#d8cfc4]/30 rounded-full animate-[spin_60s_linear_infinite]" />
               <div className="absolute inset-4 border-[1px] border-[#d8cfc4]/20 rounded-full animate-[spin_40s_linear_infinite_reverse]" />
-              <img src="/one-brand-img2.png" alt="ONE Capsule" className="w-full h-full object-contain rounded-full relative z-10 opacity-80" />
+              <img src="/bg-final.png" alt="ONE Capsule" className="w-full h-full object-cover rounded-full relative z-10 opacity-80" />
             </div>
           </motion.div>
         </div>
@@ -175,7 +175,7 @@ export default function OneBrandLandingPage() {
             >
               <div className="rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-xl shadow-black/5 bg-white">
                 <img
-                  src="/one-brand-img2.png"
+                  src="/bg-final.png"
                   alt="ONE Brand Philosophy"
                   className="w-full h-auto object-cover"
                 />

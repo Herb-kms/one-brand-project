@@ -28,7 +28,7 @@ export function Header() {
     >
       <Link href="/" className="flex items-center gap-3">
         {/* ONE Logo Image */}
-        <img src="/one-brand-img2.png" alt="ONE Logo" className="w-8 h-8 object-contain rounded-full bg-white/10" />
+        <img src="/bg-final.png" alt="ONE Logo" className="w-8 h-8 object-cover rounded-full bg-white/10" />
         <span className="text-2xl font-bold tracking-widest uppercase">ONE</span>
       </Link>
 
