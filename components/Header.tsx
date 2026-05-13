@@ -26,10 +26,8 @@ export function Header() {
         scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm' : 'bg-transparent'
       } ${isDarkText ? 'text-black' : 'text-white'}`}
     >
-      <Link href="/" className="flex items-center gap-3">
-        {/* ONE Logo Image */}
-        <img src="/bg-final.png" alt="ONE Logo" className="w-8 h-8 object-cover rounded-full bg-white/10" />
-        <span className="text-2xl font-bold tracking-widest uppercase">ONE</span>
+      <Link href="/" className="flex items-center">
+        <img src="/brand-logo.png" alt="ONE Brand Logo" className="h-8 md:h-10 w-auto object-contain transition-transform hover:scale-105" />
       </Link>
 
       <nav className="hidden md:flex items-center gap-10 text-sm font-medium tracking-[0.1em] uppercase">
